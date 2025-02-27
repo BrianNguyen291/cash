@@ -1,0 +1,16 @@
+{
+  "name": "刷卡換現金服務",
+  "short_name": "刷卡換現金",
+  "description": "提供安全合法的刷卡換現金服務，快速到帳，手續費優惠",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+} 
