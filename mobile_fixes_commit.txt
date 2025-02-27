@@ -1,0 +1,8 @@
+[Cursor] Improve mobile responsiveness
+
+- Added mobile-friendly header with slide-out menu
+- Prevented horizontal scrolling
+- Optimized touch inputs for mobile
+- Added custom scrollbar styles
+- Fixed container padding for mobile
+- Improved button and text visibility on small screens 
