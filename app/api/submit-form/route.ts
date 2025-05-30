@@ -6,9 +6,32 @@ export async function POST(request: Request) {
     const data = await request.json()
 
     // Validate required fields
-    if (!data.name || !data.phone) {
+    const requiredFields = [
+      { field: 'name', label: '姓名' },
+      { field: 'phone', label: '聯絡電話' },
+      { field: 'amount', label: '換現金金額' },
+      { field: 'message', label: '留言' },
+      { field: 'preferredContact', label: '偏好聯絡方式' }
+    ]
+
+    const missingFields = requiredFields.filter(
+      ({ field }) => !data[field] || (typeof data[field] === 'string' && !data[field].trim())
+    )
+
+    if (missingFields.length > 0) {
       return NextResponse.json(
-        { error: "姓名和電話為必填欄位" },
+        { 
+          error: "請填寫所有必填欄位",
+          missingFields: missingFields.map(f => f.label)
+        },
+        { status: 400 }
+      )
+    }
+
+    // Additional validation for amount
+    if (isNaN(Number(data.amount)) || Number(data.amount) <= 0) {
+      return NextResponse.json(
+        { error: "請輸入有效的金額" },
         { status: 400 }
       )
     }

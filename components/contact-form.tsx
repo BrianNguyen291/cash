@@ -32,6 +32,17 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Client-side validation
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.amount || !formData.message.trim()) {
+      toast({
+        title: "表單不完整",
+        description: "請填寫所有必填欄位",
+        variant: "destructive",
+      })
+      return
+    }
+    
     setIsSubmitting(true)
 
     try {
@@ -110,6 +121,9 @@ export function ContactForm() {
               placeholder="請輸入您需要的金額"
               value={formData.amount}
               onChange={handleChange}
+              required
+              min="1"
+              type="number"
             />
           </div>
 
@@ -136,6 +150,8 @@ export function ContactForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
+            required
+            minLength={5}
           />
         </div>
 
