@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Header } from "@/components/header"
 import { FloatingButtons } from "@/components/floating-buttons"
+import { GoogleTag } from "@/components/google-tag"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
+        <GoogleTag />
         <Header />
         {children}
         <FloatingButtons />
@@ -55,7 +57,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
