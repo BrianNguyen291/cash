@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Header } from "@/components/header"
 import { FloatingButtons } from "@/components/floating-buttons"
-import { GoogleTag } from "@/components/google-tag"
+import GoogleTag from "@/components/google-tag"
 
 const inter = Inter({ subsets: ["latin"] })
 
