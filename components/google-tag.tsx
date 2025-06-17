@@ -1,39 +1,80 @@
 "use client"
 
-import React, { useEffect } from "react"
+import { usePathname, useSearchParams } from "next/navigation"
+import Script from "next/script"
+import { Suspense, useEffect } from "react"
 
-export function GoogleTag() {
+const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
+
+function GoogleTag() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
   useEffect(() => {
-    // Load Google Tag Manager script
-    const script1 = document.createElement("script")
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=AW-649643647"
-    script1.async = true
-    document.head.appendChild(script1)
+    if (pathname) {
+      pageview(pathname)
+    }
+  }, [pathname, searchParams])
 
-    // Initialize gtag using Google's official implementation
-    window.dataLayer = window.dataLayer || []
-    // @ts-ignore - gtag function is defined by Google's script
-    window.gtag = function() { window.dataLayer.push(arguments) }
-    // @ts-ignore - gtag is called with arguments from Google's script
-    window.gtag('js', new Date())
-    // @ts-ignore - gtag is called with arguments from Google's script
-    window.gtag('config', 'AW-649643647')
-    
-    console.log("✅ Google Tag Manager script loaded successfully")
+  if (!GTM_ID) {
+    return null
+  }
 
-    // Set up event listeners
+  return (
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GTM_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <Suspense fallback={null}>
+        <GoogleTagEvents />
+      </Suspense>
+    </>
+  )
+}
+
+export function GoogleTagEvents() {
+  useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       // Event snippet for line conversion page
       if ((e.target as Element).closest("a[href*='line.me']")) {
-        // @ts-ignore - gtag is called with arguments from Google's script
-        window.gtag("event", "conversion", { send_to: "AW-649643647/7VGGCKjugNMaEP-M47UC" })
-        console.log("✅ LINE conversion event triggered - AW-649643647/7VGGCKjugNMaEP-M47UC")
+        event({
+          action: "conversion",
+          params: {
+            send_to: process.env.NEXT_PUBLIC_LINE_CONVERSION_LABEL,
+          },
+        })
+        console.log(
+          "✅ LINE conversion event triggered",
+          process.env.NEXT_PUBLIC_LINE_CONVERSION_LABEL
+        )
       }
       // Event snippet for Phone conversion page
       else if ((e.target as Element).closest("a[href*='tel:']")) {
-        // @ts-ignore - gtag is called with arguments from Google's script
-        window.gtag("event", "conversion", { send_to: "AW-649643647/CJGUCKXugNMaEP-M47UC" })
-        console.log("✅ Phone conversion event triggered - AW-649643647/CJGUCKXugNMaEP-M47UC")
+        event({
+          action: "conversion",
+          params: {
+            send_to: process.env.NEXT_PUBLIC_PHONE_CONVERSION_LABEL,
+          },
+        })
+        console.log(
+          "✅ Phone conversion event triggered",
+          process.env.NEXT_PUBLIC_PHONE_CONVERSION_LABEL
+        )
       }
 
       const btn = (e.target as Element).closest('button[type="submit"]')
@@ -47,19 +88,28 @@ export function GoogleTag() {
         console.log("🔍 Form submitted, waiting for success message...")
         const visibleID = setInterval(() => {
           // Look for Radix UI Toast title elements with "表單已送出" text
-          const toastTitles = document.querySelectorAll('[role="status"] [data-radix-toast-title], [role="status"] div > div:first-child')
+          const toastTitles = document.querySelectorAll(
+            '[role="status"] [data-radix-toast-title], [role="status"] div > div:first-child'
+          )
           let formSubmitted = false
-          
-          toastTitles.forEach(element => {
+
+          toastTitles.forEach((element) => {
             if (element.textContent?.includes("表單已送出")) {
               formSubmitted = true
             }
           })
-          
+
           if (formSubmitted) {
-            // @ts-ignore - gtag is called with arguments from Google's script
-            window.gtag("event", "conversion", { send_to: "AW-649643647/hwb3CKvugNMaEP-M47UC" })
-            console.log("✅ Form submission conversion event triggered - AW-649643647/hwb3CKvugNMaEP-M47UC")
+            event({
+              action: "conversion",
+              params: {
+                send_to: process.env.NEXT_PUBLIC_FORM_CONVERSION_LABEL,
+              },
+            })
+            console.log(
+              "✅ Form submission conversion event triggered",
+              process.env.NEXT_PUBLIC_FORM_CONVERSION_LABEL
+            )
             clearInterval(visibleID)
           }
         }, 1000)
@@ -77,10 +127,33 @@ export function GoogleTag() {
   return null
 }
 
-// Add this to make gtag available globally
+export function pageview(url: string) {
+  if (typeof window.gtag !== "function") {
+    return
+  }
+  window.gtag("config", GTM_ID as string, {
+    page_path: url,
+  })
+}
+
+type GTagEvent = {
+  action: string
+  params: {
+    [key: string]: any
+  }
+}
+
+export const event = ({ action, params }: GTagEvent) => {
+  if (typeof window.gtag !== "function") {
+    return
+  }
+  window.gtag("event", action, params)
+}
+
+export default GoogleTag
+
 declare global {
   interface Window {
-    dataLayer: any[]
-    gtag: any
+    gtag: (param1: string, param2: string, param3: object) => void
   }
 } 
