@@ -6,7 +6,7 @@ import { Suspense, useEffect } from "react"
 
 const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 
-function GoogleTag() {
+function PageViewTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -16,6 +16,10 @@ function GoogleTag() {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+function GoogleTag() {
   if (!GTM_ID) {
     return null
   }
@@ -41,6 +45,7 @@ function GoogleTag() {
         }}
       />
       <Suspense fallback={null}>
+        <PageViewTracker />
         <GoogleTagEvents />
       </Suspense>
     </>
