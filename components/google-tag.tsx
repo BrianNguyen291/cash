@@ -10,13 +10,14 @@ export function GoogleTag() {
     script1.async = true
     document.head.appendChild(script1)
 
-    // Initialize gtag
+    // Initialize gtag using Google's official implementation
     window.dataLayer = window.dataLayer || []
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args)
-    }
-    gtag("js", new Date())
-    gtag("config", "AW-649643647")
+    // @ts-ignore - gtag function is defined by Google's script
+    window.gtag = function() { window.dataLayer.push(arguments) }
+    // @ts-ignore - gtag is called with arguments from Google's script
+    window.gtag('js', new Date())
+    // @ts-ignore - gtag is called with arguments from Google's script
+    window.gtag('config', 'AW-649643647')
     
     console.log("✅ Google Tag Manager script loaded successfully")
 
@@ -24,12 +25,14 @@ export function GoogleTag() {
     const handleClick = (e: MouseEvent) => {
       // Event snippet for line conversion page
       if ((e.target as Element).closest("a[href*='line.me']")) {
-        gtag("event", "conversion", { send_to: "AW-649643647/7VGGCKjugNMaEP-M47UC" })
+        // @ts-ignore - gtag is called with arguments from Google's script
+        window.gtag("event", "conversion", { send_to: "AW-649643647/7VGGCKjugNMaEP-M47UC" })
         console.log("✅ LINE conversion event triggered - AW-649643647/7VGGCKjugNMaEP-M47UC")
       }
       // Event snippet for Phone conversion page
       else if ((e.target as Element).closest("a[href*='tel:']")) {
-        gtag("event", "conversion", { send_to: "AW-649643647/CJGUCKXugNMaEP-M47UC" })
+        // @ts-ignore - gtag is called with arguments from Google's script
+        window.gtag("event", "conversion", { send_to: "AW-649643647/CJGUCKXugNMaEP-M47UC" })
         console.log("✅ Phone conversion event triggered - AW-649643647/CJGUCKXugNMaEP-M47UC")
       }
 
@@ -54,7 +57,8 @@ export function GoogleTag() {
           })
           
           if (formSubmitted) {
-            gtag("event", "conversion", { send_to: "AW-649643647/hwb3CKvugNMaEP-M47UC" })
+            // @ts-ignore - gtag is called with arguments from Google's script
+            window.gtag("event", "conversion", { send_to: "AW-649643647/hwb3CKvugNMaEP-M47UC" })
             console.log("✅ Form submission conversion event triggered - AW-649643647/hwb3CKvugNMaEP-M47UC")
             clearInterval(visibleID)
           }
@@ -77,5 +81,6 @@ export function GoogleTag() {
 declare global {
   interface Window {
     dataLayer: any[]
+    gtag: any
   }
 } 
