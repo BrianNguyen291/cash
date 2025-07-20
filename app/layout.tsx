@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Header } from "@/components/header"
 import { FloatingButtons } from "@/components/floating-buttons"
+import { Footer } from "@/components/footer"
 import GoogleTag from "@/components/google-tag"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -34,6 +35,7 @@ export default function RootLayout({
         <GoogleTag />
         <Header />
         {children}
+        <Footer />
         <FloatingButtons />
         <script
           dangerouslySetInnerHTML={{
