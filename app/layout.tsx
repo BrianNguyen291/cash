@@ -28,6 +28,17 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-649643647"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-649643647');
+            `,
+          }}
+        />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
