@@ -1,7 +1,0 @@
-[Cursor] Add floating TOP and Contact buttons
-
-- Added floating TOP button that appears on scroll
-- Added floating Contact button with quick actions
-- Integrated contact form in slide-out panel
-- Added mobile-specific styling for better touch targets
-- Improved button visibility and shadows 

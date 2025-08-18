@@ -1,6 +1,0 @@
-[Cursor] Add Vercel deployment configuration
-
-- Added README.md with deployment instructions
-- Created .env.example for environment variables
-- Updated Next.js configuration for Vercel
-- Added deployment documentation 

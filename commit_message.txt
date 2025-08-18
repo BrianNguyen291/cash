@@ -1,7 +1,0 @@
-[Cursor] Initial commit: Credit card cash service website
-
-- Implemented main landing page
-- Added contact form with email integration
-- Included service descriptions and FAQ
-- Set up contact information (LINE and phone)
-- Removed blog section as requested 
