@@ -61,13 +61,13 @@ export function FloatingButtons() {
               </Button>
               <Button asChild size="lg" className="justify-start">
                 <a 
-                  href="https://line.me/ti/p/6FCezRNRX7" 
+                  href="https://line.me/ti/p/JOfQlDWkEp" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  LINE 諮詢: bbgc6440
+                  LINE 諮詢: as63300
                 </a>
               </Button>
             </div>
