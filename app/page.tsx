@@ -290,7 +290,7 @@ export default function Home() {
                 <Link href="tel:0933118656" className="w-full sm:w-auto">
                   <Button className="w-full text-lg h-12 px-8">
                     <Phone className="w-5 h-5 mr-2" />
-                    0907-095-632
+                    0933-118-656
                   </Button>
                 </Link>
               </div>
