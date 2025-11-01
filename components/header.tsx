@@ -10,12 +10,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4">
-        <Link href="/" className="font-bold text-xl shrink-0">刷卡換現金</Link>
+        <div className="flex items-center gap-6">
+          <Link href="/" className="font-bold text-xl shrink-0">刷卡換現金</Link>
+          <Link href="/mortgage" className="text-lg font-semibold hover:text-primary">房屋貸款</Link>
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
-          <Link href="/services" className="text-sm hover:text-primary">服務介紹</Link>
-          <Link href="/faq" className="text-sm hover:text-primary">常見問題</Link>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="gap-2">
               <Phone className="h-4 w-4" />
@@ -40,16 +41,10 @@ export function Header() {
           <SheetContent side="right" className="w-[80vw] sm:w-[385px]">
             <nav className="flex flex-col gap-4 mt-8">
               <Link 
-                href="/services" 
+                href="/mortgage" 
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
-                服務介紹
-              </Link>
-              <Link 
-                href="/faq" 
-                className="text-lg font-medium hover:text-primary transition-colors"
-              >
-                常見問題
+                房屋貸款
               </Link>
               <div className="flex flex-col gap-3 mt-4">
                 <Button asChild variant="outline" size="lg" className="justify-start">
