@@ -1,7 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Home, Building2, CreditCard, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Home, Building2, CreditCard } from "lucide-react"
 
 const services = [
   {
@@ -56,12 +54,6 @@ export function MortgageServicesSection() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-4 bg-transparent" variant="outline" asChild>
-                    <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
-                      立即諮詢
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
                 </CardContent>
               </Card>
             ))}
