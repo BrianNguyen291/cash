@@ -13,7 +13,7 @@ export function MortgageAboutSection() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                耀耀科技專注於房屋貸款整合與金融顧問服務，提供一胎、二胎貸款解決方案，幫助客戶快速取得資金。
+                我們專注於房屋貸款整合與金融顧問服務，提供一胎、二胎貸款解決方案，幫助客戶快速取得資金。
               </p>
               <p className="text-lg leading-relaxed text-muted-foreground">
                 所有貸款皆依法規定，安全可靠。我們致力於為客戶提供最專業的金融諮詢服務，協助您實現財務目標。
