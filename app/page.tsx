@@ -10,6 +10,7 @@ import { TrustBadges } from "@/components/trust-badges"
 import { FAQSection } from "@/components/faq-section"
 import { ServiceSteps } from "@/components/service-steps"
 import { LegalNotice } from "@/components/legal-notice"
+import { PartnershipSection } from "@/components/partnership-section"
 import Image from "next/image"
 
 export default function Home() {
@@ -266,6 +267,8 @@ export default function Home() {
       {/* FAQ Section */}
       <FAQSection />
 
+     
+
       {/* Contact Form */}
       <section className="py-16 bg-white" id="contact">
         <div className="container mx-auto px-4">
@@ -298,6 +301,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+       {/* Partnership Section */}
+       <PartnershipSection />
     </div>
   )
 }
