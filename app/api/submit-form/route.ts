@@ -4,15 +4,28 @@ import { sendEmail } from "@/lib/email"
 export async function POST(request: Request) {
   try {
     const data = await request.json()
+    const isMortgageForm = data.formType === "mortgage"
 
-    // Validate required fields
-    const requiredFields = [
-      { field: 'name', label: '姓名' },
-      { field: 'phone', label: '聯絡電話' },
-      { field: 'amount', label: '換現金金額' },
-      { field: 'message', label: '留言' },
-      { field: 'preferredContact', label: '偏好聯絡方式' }
-    ]
+    // Validate required fields based on form type
+    let requiredFields: { field: string; label: string }[]
+    
+    if (isMortgageForm) {
+      requiredFields = [
+        { field: 'name', label: '姓名' },
+        { field: 'phone', label: '聯絡電話' },
+        { field: 'loanType', label: '貸款類型' },
+        { field: 'message', label: '留言' },
+        { field: 'preferredContact', label: '偏好聯絡方式' }
+      ]
+    } else {
+      requiredFields = [
+        { field: 'name', label: '姓名' },
+        { field: 'phone', label: '聯絡電話' },
+        { field: 'amount', label: '換現金金額' },
+        { field: 'message', label: '留言' },
+        { field: 'preferredContact', label: '偏好聯絡方式' }
+      ]
+    }
 
     const missingFields = requiredFields.filter(
       ({ field }) => !data[field] || (typeof data[field] === 'string' && !data[field].trim())
@@ -28,19 +41,34 @@ export async function POST(request: Request) {
       )
     }
 
-    // Additional validation for amount
-    if (isNaN(Number(data.amount)) || Number(data.amount) <= 0) {
+    // Additional validation for amount (cash form only)
+    if (!isMortgageForm && (isNaN(Number(data.amount)) || Number(data.amount) <= 0)) {
       return NextResponse.json(
         { error: "請輸入有效的金額" },
         { status: 400 }
       )
     }
 
-    // Prepare email content
+    // Prepare email content based on form type
     const emailContent = {
       to: "ilove265615@yahoo.com.tw",
-      subject: "新的刷卡換現金諮詢請求",
-      html: `
+      subject: isMortgageForm ? "新的房屋貸款諮詢請求" : "新的刷卡換現金諮詢請求",
+      html: isMortgageForm ? `
+        <h1>新的房屋貸款諮詢請求</h1>
+        <p><strong>姓名:</strong> ${data.name}</p>
+        <p><strong>電話:</strong> ${data.phone}</p>
+        <p><strong>貸款類型:</strong> ${
+          data.loanType === "first-mortgage" ? "一胎房貸" :
+          data.loanType === "second-mortgage" ? "二胎房貸" :
+          data.loanType === "refinance" ? "房屋增貸" :
+          data.loanType === "consultation" ? "諮詢了解" : data.loanType
+        }</p>
+        <p><strong>房屋價值:</strong> ${data.propertyValue ? `${data.propertyValue} 萬元` : "未指定"}</p>
+        <p><strong>欲貸款金額:</strong> ${data.loanAmount ? `${data.loanAmount} 萬元` : "未指定"}</p>
+        <p><strong>偏好聯絡方式:</strong> ${data.preferredContact === "line" ? "LINE" : "電話"}</p>
+        <p><strong>留言:</strong> ${data.message || "無"}</p>
+        <p><strong>提交時間:</strong> ${new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" })}</p>
+      ` : `
         <h1>新的刷卡換現金諮詢請求</h1>
         <p><strong>姓名:</strong> ${data.name}</p>
         <p><strong>電話:</strong> ${data.phone}</p>

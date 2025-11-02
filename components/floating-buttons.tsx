@@ -1,12 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowUp, MessageCircle, Phone } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ContactForm } from "@/components/contact-form"
+import { MortgageContactForm } from "@/components/mortgage-contact-form"
 
 export function FloatingButtons() {
+  const pathname = usePathname()
+  const isMortgagePage = pathname?.startsWith("/mortgage")
   const [showTopButton, setShowTopButton] = useState(false)
 
   useEffect(() => {
@@ -75,7 +79,7 @@ export function FloatingButtons() {
             {/* Contact Form */}
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-4">填寫諮詢表單</h3>
-              <ContactForm />
+              {isMortgagePage ? <MortgageContactForm /> : <ContactForm />}
             </div>
           </div>
         </SheetContent>
