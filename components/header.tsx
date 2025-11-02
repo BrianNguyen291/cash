@@ -1,15 +1,12 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, Phone, MessageCircle } from "lucide-react"
+import { Menu, X, Phone, MessageCircle } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function Header() {
-  const pathname = usePathname()
-  const isMortgagePage = pathname?.startsWith("/mortgage")
-  
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4">
@@ -19,22 +16,20 @@ export function Header() {
         </div>
         
         {/* Desktop Navigation */}
-        {!isMortgagePage && (
-          <nav className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Phone className="h-4 w-4" />
-                <a href="tel:0933118656" className="hidden sm:inline">0933118656</a>
-              </Button>
-              <Button variant="default" size="sm" className="gap-2">
-                <MessageCircle className="h-4 w-4" />
-                <a href="https://line.me/ti/p/JOfQlDWkEp" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
-                  LINE: as63300
-                </a>
-              </Button>
-            </div>
-          </nav>
-        )}
+        <nav className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" className="gap-2">
+              <Phone className="h-4 w-4" />
+              <a href="tel:0933118656" className="hidden sm:inline">0933118656</a>
+            </Button>
+            <Button variant="default" size="sm" className="gap-2">
+              <MessageCircle className="h-4 w-4" />
+              <a href="https://line.me/ti/p/JOfQlDWkEp" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
+                LINE: as63300
+              </a>
+            </Button>
+          </div>
+        </nav>
 
         {/* Mobile Navigation */}
         <Sheet>
@@ -51,27 +46,25 @@ export function Header() {
               >
                 房屋貸款
               </Link>
-              {!isMortgagePage && (
-                <div className="flex flex-col gap-3 mt-4">
-                  <Button asChild variant="outline" size="lg" className="justify-start">
-                    <a href="tel:0933118656" className="flex items-center gap-2">
-                      <Phone className="h-4 w-4" />
-                      0933118656
-                    </a>
-                  </Button>
-                  <Button asChild size="lg" className="justify-start">
-                    <a 
-                      href="https://line.me/ti/p/JOfQlDWkEp" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <MessageCircle className="h-4 w-4" />
-                      LINE: as63300
-                    </a>
-                  </Button>
-                </div>
-              )}
+              <div className="flex flex-col gap-3 mt-4">
+                <Button asChild variant="outline" size="lg" className="justify-start">
+                  <a href="tel:0933118656" className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    0933118656
+                  </a>
+                </Button>
+                <Button asChild size="lg" className="justify-start">
+                  <a 
+                    href="https://line.me/ti/p/JOfQlDWkEp" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    LINE: as63300
+                  </a>
+                </Button>
+              </div>
             </nav>
           </SheetContent>
         </Sheet>

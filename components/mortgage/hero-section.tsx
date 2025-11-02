@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 export function MortgageHeroSection() {
@@ -29,6 +29,17 @@ export function MortgageHeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 max-w-md sm:max-w-none mx-auto">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-auto shadow-xl w-full sm:w-auto"
+              asChild
+            >
+              <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
+                <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                立即諮詢
+              </Link>
+            </Button>
+
             <Button
               size="lg"
               variant="outline"

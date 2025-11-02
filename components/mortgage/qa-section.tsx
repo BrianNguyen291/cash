@@ -60,6 +60,18 @@ export function MortgageQASection() {
               </AccordionItem>
             ))}
           </Accordion>
+
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground mb-4">還有其他問題？</p>
+            <a
+              href="https://line.me/ti/p/JOfQlDWkEp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white hover:bg-blue-700 h-10 px-6 md:px-8"
+            >
+              立即諮詢專員
+            </a>
+          </div>
         </div>
       </div>
     </section>

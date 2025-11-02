@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Mail, MapPin } from "lucide-react"
+import { Mail, MessageCircle, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export function MortgageContactFooter() {
@@ -39,6 +39,13 @@ export function MortgageContactFooter() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                  <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    LINE 諮詢
+                  </Link>
+                </Button>
+
                 <Button
                   size="lg"
                   variant="outline"
@@ -47,7 +54,7 @@ export function MortgageContactFooter() {
                 >
                   <Link href="mailto:ilove265615@yahoo.com.tw">
                     <Mail className="mr-2 h-5 w-5" />
-                    Email 聯繫
+                    Email
                   </Link>
                 </Button>
               </div>
