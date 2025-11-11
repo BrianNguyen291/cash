@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { Header } from "@/components/header"
 import { FloatingButtons } from "@/components/floating-buttons"
 import GoogleTag from "@/components/google-tag"
+import { FraudPreventionModal } from "@/components/fraud-prevention-modal"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Header />
         {children}
         <FloatingButtons />
+        <FraudPreventionModal />
         <script
           dangerouslySetInnerHTML={{
             __html: `
