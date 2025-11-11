@@ -59,7 +59,7 @@ export function FraudPreventionModal() {
             {/* Introduction Paragraphs */}
             <div className="space-y-4 text-gray-800 leading-relaxed">
               <p>
-                好好刷的業務模式是簡單明瞭的：消費者使用信用卡購買商品後，可以將商品出售給我們，並獲得現金。
+                簡單明瞭的消費模式：消費者使用信用卡購買商品後，可以將商品出售給我們，並獲得現金。
               </p>
               <p>
                 <span className="font-bold text-red-600">
@@ -68,7 +68,7 @@ export function FraudPreventionModal() {
                 ，尤其是那些聲稱與我們有合作關係的個人或公司，避免財務損失。
               </p>
               <p>
-                在這裡，好好刷提供幾個保護自己的建議：
+                在這裡，提供幾個保護自己的建議：
               </p>
             </div>
 
