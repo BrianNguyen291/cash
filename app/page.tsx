@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CreditCard, Shield, Phone, ArrowRight, Check, Zap, Clock, Users, TrendingUp } from "lucide-react"
+import { CreditCard, Shield, Phone, ArrowRight, Check, Zap, Clock, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { ContactForm } from "@/components/contact-form"
 import { TrustBadges } from "@/components/trust-badges"
@@ -29,22 +29,35 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Split Screen Design */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
+        {/* Background Image - All Screens */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/business-1.jpeg"
+            alt="服務展示"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-white/60 lg:from-white/40 lg:via-transparent lg:to-transparent"></div>
+        </div>
+
         {/* Left Side - Content */}
         <div className="w-full lg:w-1/2 relative z-10 px-6 py-20 lg:py-32">
           <div className="max-w-2xl mx-auto">
             <div className="mb-8">
-              <div className="inline-block px-4 py-2 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full mb-6">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full mb-6 backdrop-blur-sm">
                 <span className="text-sm font-semibold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
                   專業合法 · 快速到帳
                 </span>
               </div>
+
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                 <span className="block text-gray-900">刷卡換現金</span>
                 <span className="block bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
                   快速安全
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed font-medium">
                 專業合法的現金週轉服務，陪同購物、高價回收、立即付現
               </p>
             </div>
@@ -89,18 +102,17 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side - Image */}
-        <div className="hidden lg:block w-1/2 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50"></div>
+        {/* Right Side - Additional Image for Desktop */}
+        <div className="hidden lg:block w-1/2 relative z-0">
           <div className="relative h-full">
             <Image
-              src="/images/business-1.jpeg"
+              src="/images/transaction-1.jpeg"
               alt="服務展示"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-white/80 via-white/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/30"></div>
           </div>
         </div>
       </section>
@@ -190,36 +202,6 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Bottom Row - Full Width Split */}
-            <Card className="md:col-span-2 relative overflow-hidden group border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-white to-violet-50/50">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center flex-shrink-0">
-                    <Users className="h-10 w-10 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-3 text-gray-900">專業團隊</h3>
-                    <p className="text-gray-600 text-lg mb-4">
-                      經驗豐富的專業團隊，提供最優質的服務，全程陪同確保交易安全。
-                    </p>
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      <li className="flex items-center text-sm text-gray-600">
-                        <Check className="h-4 w-4 text-violet-600 mr-2" />
-                        專業諮詢
-                      </li>
-                      <li className="flex items-center text-sm text-gray-600">
-                        <Check className="h-4 w-4 text-violet-600 mr-2" />
-                        全程陪同
-                      </li>
-                      <li className="flex items-center text-sm text-gray-600">
-                        <Check className="h-4 w-4 text-violet-600 mr-2" />
-                        安全保障
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
