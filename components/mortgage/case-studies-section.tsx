@@ -7,21 +7,21 @@ const cases = [
     location: "桃園市",
     amount: "300萬",
     purpose: "用於裝修與創業",
-    image: "https://images.pexels.com/photos/5824909/pexels-photo-5824909.jpeg",
+    image: "/images/mortgage-2.jpeg",
   },
   {
     name: "李先生",
     location: "新北市",
     amount: "200萬",
     purpose: "用於子女教育",
-    image: "https://images.pexels.com/photos/3760259/pexels-photo-3760259.jpeg",
+    image: "/images/mortgage-3.jpeg",
   },
   {
     name: "陳先生",
     location: "台北市",
     amount: "500萬",
     purpose: "企業融資週轉",
-    image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
+    image: "/images/mortgage-1.jpeg",
   },
 ]
 

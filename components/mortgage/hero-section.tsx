@@ -8,7 +8,7 @@ export function MortgageHeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg"
+          src="/images/mortgage-hero.jpeg"
           alt="Beautiful home"
           className="w-full h-full object-cover"
         />
@@ -34,7 +34,7 @@ export function MortgageHeroSection() {
               className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-auto shadow-xl w-full sm:w-auto"
               asChild
             >
-              <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
+              <Link href="https://line.me/ti/p/7Gm6J31NKY" target="_blank">
                 <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 立即諮詢
               </Link>

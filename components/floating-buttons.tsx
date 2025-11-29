@@ -1,16 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowUp, MessageCircle, Phone } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ContactForm } from "@/components/contact-form"
-import { MortgageContactForm } from "@/components/mortgage-contact-form"
+import { contactConfig } from "@/lib/config"
 
 export function FloatingButtons() {
-  const pathname = usePathname()
-  const isMortgagePage = pathname?.startsWith("/mortgage")
   const [showTopButton, setShowTopButton] = useState(false)
 
   useEffect(() => {
@@ -46,7 +43,7 @@ export function FloatingButtons() {
           <Button
             variant="default"
             size="icon"
-            className="rounded-full shadow-lg bg-blue-500 hover:bg-blue-600"
+            className="rounded-full shadow-lg bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700"
           >
             <MessageCircle className="h-5 w-5" />
           </Button>
@@ -58,20 +55,20 @@ export function FloatingButtons() {
             {/* Quick Contact Buttons */}
             <div className="flex flex-col gap-3 mb-8">
               <Button asChild variant="outline" size="lg" className="justify-start">
-                <a href="tel:0933118656" className="flex items-center gap-2">
+                <a href={`tel:${contactConfig.phone}`} className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  立即撥打: 0933118656
+                  立即撥打: {contactConfig.phone}
                 </a>
               </Button>
               <Button asChild size="lg" className="justify-start">
                 <a 
-                  href="https://line.me/ti/p/JOfQlDWkEp" 
+                  href={contactConfig.lineUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  LINE 諮詢: as63300
+                  LINE 諮詢
                 </a>
               </Button>
             </div>
@@ -79,7 +76,7 @@ export function FloatingButtons() {
             {/* Contact Form */}
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-4">填寫諮詢表單</h3>
-              {isMortgagePage ? <MortgageContactForm /> : <ContactForm />}
+              <ContactForm />
             </div>
           </div>
         </SheetContent>

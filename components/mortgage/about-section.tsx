@@ -43,7 +43,7 @@ export function MortgageAboutSection() {
 
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg" 
+                src="/images/mortgage-1.jpeg" 
                 alt="專業顧問服務" 
                 className="rounded-lg shadow-2xl w-full" 
               />

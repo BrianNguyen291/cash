@@ -5,14 +5,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, MessageCircle } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { contactConfig } from "@/lib/config"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b border-purple-100 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 shadow-sm">
       <div className="container flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-6">
-          <Link href="/" className="font-bold text-xl shrink-0">刷卡換現金</Link>
-          <Link href="/mortgage" className="text-lg font-semibold hover:text-primary">房屋貸款</Link>
+          <Link href="/" className="font-bold text-xl shrink-0 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">刷卡換現金</Link>
         </div>
         
         {/* Desktop Navigation */}
@@ -20,12 +20,12 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="gap-2">
               <Phone className="h-4 w-4" />
-              <a href="tel:0933118656" className="hidden sm:inline">0933118656</a>
+              <a href={`tel:${contactConfig.phone}`} className="hidden sm:inline">{contactConfig.phone}</a>
             </Button>
-            <Button variant="default" size="sm" className="gap-2">
+            <Button variant="default" size="sm" className="gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white">
               <MessageCircle className="h-4 w-4" />
-              <a href="https://line.me/ti/p/JOfQlDWkEp" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
-                LINE: as63300
+              <a href={contactConfig.lineUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
+                加入LINE
               </a>
             </Button>
           </div>
@@ -40,28 +40,22 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[80vw] sm:w-[385px]">
             <nav className="flex flex-col gap-4 mt-8">
-              <Link 
-                href="/mortgage" 
-                className="text-lg font-medium hover:text-primary transition-colors"
-              >
-                房屋貸款
-              </Link>
-              <div className="flex flex-col gap-3 mt-4">
+              <div className="flex flex-col gap-3">
                 <Button asChild variant="outline" size="lg" className="justify-start">
-                  <a href="tel:0933118656" className="flex items-center gap-2">
+                  <a href={`tel:${contactConfig.phone}`} className="flex items-center gap-2">
                     <Phone className="h-4 w-4" />
-                    0933118656
+                    {contactConfig.phone}
                   </a>
                 </Button>
-                <Button asChild size="lg" className="justify-start">
+                <Button asChild size="lg" className="justify-start bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white">
                   <a 
-                    href="https://line.me/ti/p/JOfQlDWkEp" 
+                    href={contactConfig.lineUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    LINE: as63300
+                    加入LINE
                   </a>
                 </Button>
               </div>

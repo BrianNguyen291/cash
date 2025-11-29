@@ -57,7 +57,7 @@ export function MortgageServicesSection() {
                     ))}
                   </ul>
                   <Button className="w-full mt-4 bg-transparent" variant="outline" asChild>
-                    <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
+                    <Link href="https://line.me/ti/p/7Gm6J31NKY" target="_blank">
                       立即諮詢
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

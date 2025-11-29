@@ -4,17 +4,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export function FAQSection() {
   return (
-    <section className="py-16 bg-gray-100" id="faq">
+    <section className="py-16 bg-gradient-to-b from-indigo-50/30 to-white" id="faq">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">常見問題</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">常見問題</h2>
 
-          <Accordion type="single" collapsible className="bg-white rounded-lg shadow-md">
+          <Accordion type="single" collapsible className="bg-white rounded-xl shadow-lg border-2 border-purple-100">
             <AccordionItem value="item-1">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">刷卡換現金是否合法？</AccordionTrigger>
               <AccordionContent className="px-6 pb-4">
                 <p className="mb-2">是的，我們的服務完全合法。</p>
-                <p className="mb-2 font-semibold bg-yellow-50 p-2 border-l-4 border-yellow-500">
+                <p className="mb-2 font-semibold bg-gradient-to-r from-amber-50 to-orange-50 p-3 rounded-lg border-l-4 border-amber-500">
                   刷卡購物，是指陪同去指定商家購買商品，再販售給我們，折數高價回收，合法收購。
                 </p>
                 <p>

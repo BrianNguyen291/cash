@@ -1,11 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Handshake, Mail } from "lucide-react"
-import Link from "next/link"
 
 export function PartnershipSection() {
   return (
-    <section className="py-20 md:py-32 bg-primary text-white">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-purple-600 via-indigo-600 to-teal-500 text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -16,7 +14,7 @@ export function PartnershipSection() {
             <div className="w-20 h-1 bg-accent mx-auto mb-8" />
           </div>
 
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+          <Card className="bg-white/15 backdrop-blur-md border-white/30 shadow-2xl">
             <CardHeader>
               <CardTitle className="text-2xl text-white">廠商配合團購合作</CardTitle>
               <CardDescription className="text-white/80 text-base">
@@ -30,22 +28,11 @@ export function PartnershipSection() {
                   <Mail className="h-5 w-5 text-white/80" />
                   <a 
                     href="mailto:ilove265615@yahoo.com.tw" 
-                    className="text-white text-lg font-medium hover:text-blue-300 transition-colors"
+                    className="text-white text-lg font-medium hover:text-amber-300 transition-colors"
                   >
                     ilove265615@yahoo.com.tw
                   </a>
                 </div>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 hover:bg-white/20 text-white border-white/30 h-auto py-4 w-full"
-                  asChild
-                >
-                  <Link href="mailto:ilove265615@yahoo.com.tw">
-                    <Mail className="mr-2 h-5 w-5" />
-                    Email 聯繫我們
-                  </Link>
-                </Button>
               </div>
             </CardContent>
           </Card>
