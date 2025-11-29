@@ -6,7 +6,7 @@ export function TrustBadges() {
     <section className="py-12 bg-gradient-to-b from-white via-purple-50/20 to-indigo-50/30">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">我們的服務保障</h2>
-//da
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-purple-100 hover:border-purple-300 hover:-translate-y-1">
             <div className="relative h-40 mb-4 rounded-lg overflow-hidden">
