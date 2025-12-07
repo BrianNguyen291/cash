@@ -30,7 +30,7 @@ export function MortgagePartnershipSection() {
 
               <div className="grid sm:grid-cols-2 gap-4 pt-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white h-auto py-4" asChild>
-                  <Link href="https://line.me/ti/p/7Gm6J31NKY" target="_blank">
+                  <Link href="https://lin.ee/CBrjtvjX" target="_blank">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     加入 LINE 洽談
                   </Link>
