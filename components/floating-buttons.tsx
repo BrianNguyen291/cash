@@ -71,7 +71,7 @@ export function FloatingButtons() {
                   className="flex items-center gap-2"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  LINE 諮詢: as63300
+                  LINE 諮詢: 309rgssv
                 </a>
               </Button>
             </div>
