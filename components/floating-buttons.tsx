@@ -32,9 +32,8 @@ export function FloatingButtons() {
       <Button
         variant="default"
         size="icon"
-        className={`rounded-full shadow-lg transition-all duration-300 ${
-          showTopButton ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-        }`}
+        className={`rounded-full shadow-lg transition-all duration-300 ${showTopButton ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         onClick={scrollToTop}
       >
         <ArrowUp className="h-5 w-5" />
@@ -54,7 +53,7 @@ export function FloatingButtons() {
         <SheetContent side="right" className="w-[90vw] sm:w-[540px] overflow-y-auto">
           <div className="py-6">
             <h2 className="text-2xl font-bold mb-6">聯絡我們</h2>
-            
+
             {/* Quick Contact Buttons */}
             <div className="flex flex-col gap-3 mb-8">
               <Button asChild variant="outline" size="lg" className="justify-start">
@@ -64,9 +63,9 @@ export function FloatingButtons() {
                 </a>
               </Button>
               <Button asChild size="lg" className="justify-start">
-                <a 
-                  href="https://line.me/ti/p/JOfQlDWkEp" 
-                  target="_blank" 
+                <a
+                  href="https://lin.ee/b9s8rmG"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >

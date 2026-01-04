@@ -40,7 +40,7 @@ export function MortgageContactFooter() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
-                  <Link href="https://line.me/ti/p/JOfQlDWkEp" target="_blank">
+                  <Link href="https://lin.ee/b9s8rmG" target="_blank">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     LINE 諮詢
                   </Link>
