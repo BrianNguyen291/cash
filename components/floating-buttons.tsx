@@ -64,13 +64,13 @@ export function FloatingButtons() {
               </Button>
               <Button asChild size="lg" className="justify-start">
                 <a
-                  href="https://lin.ee/b9s8rmG"
+                  href="https://lin.ee/Sia7Z4P"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  LINE 諮詢: @309rgssv
+                  LINE 諮詢: @309rgssv 點擊加入
                 </a>
               </Button>
             </div>

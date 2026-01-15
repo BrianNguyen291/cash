@@ -34,9 +34,9 @@ export function MortgageHeroSection() {
               className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-auto shadow-xl w-full sm:w-auto"
               asChild
             >
-              <Link href="https://lin.ee/b9s8rmG" target="_blank">
+              <Link href="https://lin.ee/Sia7Z4P" target="_blank">
                 <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                立即諮詢
+                立即諮詢 點擊加入
               </Link>
             </Button>
 

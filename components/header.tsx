@@ -24,8 +24,8 @@ export function Header() {
             </Button>
             <Button variant="default" size="sm" className="gap-2">
               <MessageCircle className="h-4 w-4" />
-              <a href="https://lin.ee/b9s8rmG" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
-                LINE: @309rgssv
+              <a href="https://lin.ee/Sia7Z4P" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
+                LINE: @309rgssv 點擊加入
               </a>
             </Button>
           </div>
@@ -55,13 +55,13 @@ export function Header() {
                 </Button>
                 <Button asChild size="lg" className="justify-start">
                   <a
-                    href="https://lin.ee/b9s8rmG"
+                    href="https://lin.ee/Sia7Z4P"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    LINE: @309rgssv
+                    LINE: @309rgssv 點擊加入
                   </a>
                 </Button>
               </div>
