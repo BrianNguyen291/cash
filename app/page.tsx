@@ -44,7 +44,7 @@ export default function Home() {
                 加入LINE 點擊加入
               </Button>
             </Link>
-            <Link href="tel:0933118656" className="flex-1 md:flex-none">
+            <Link href="tel:0907095632" className="flex-1 md:flex-none">
               <Button className="w-full">
                 <Phone className="w-5 h-5 mr-2" />
                 立即來電
@@ -290,7 +290,7 @@ export default function Home() {
                     LINE ID: @309rgssv 點擊加入
                   </Button>
                 </Link>
-                <Link href="tel:0933118656" className="w-full sm:w-auto">
+                <Link href="tel:0907095632" className="w-full sm:w-auto">
                   <Button className="w-full text-lg h-12 px-8">
                     <Phone className="w-5 h-5 mr-2" />
                     0933-118-656

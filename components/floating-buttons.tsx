@@ -57,9 +57,9 @@ export function FloatingButtons() {
             {/* Quick Contact Buttons */}
             <div className="flex flex-col gap-3 mb-8">
               <Button asChild variant="outline" size="lg" className="justify-start">
-                <a href="tel:0933118656" className="flex items-center gap-2">
+                <a href="tel:0907095632" className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  立即撥打: 0933118656
+                  立即撥打: 0907095632
                 </a>
               </Button>
               <Button asChild size="lg" className="justify-start">

@@ -20,7 +20,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="gap-2">
               <Phone className="h-4 w-4" />
-              <a href="tel:0933118656" className="hidden sm:inline">0933118656</a>
+              <a href="tel:0907095632" className="hidden sm:inline">0907095632</a>
             </Button>
             <Button variant="default" size="sm" className="gap-2">
               <MessageCircle className="h-4 w-4" />
@@ -48,9 +48,9 @@ export function Header() {
               </Link>
               <div className="flex flex-col gap-3 mt-4">
                 <Button asChild variant="outline" size="lg" className="justify-start">
-                  <a href="tel:0933118656" className="flex items-center gap-2">
+                  <a href="tel:0907095632" className="flex items-center gap-2">
                     <Phone className="h-4 w-4" />
-                    0933118656
+                    0907095632
                   </a>
                 </Button>
                 <Button asChild size="lg" className="justify-start">
