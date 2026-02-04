@@ -64,7 +64,7 @@ export function FloatingButtons() {
               </Button>
               <Button asChild size="lg" className="justify-start">
                 <a
-                  href="https://lin.ee/Sia7Z4P"
+                  href="https://lin.ee/LwBO514"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
