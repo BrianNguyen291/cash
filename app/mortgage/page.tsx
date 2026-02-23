@@ -3,7 +3,6 @@ import { MortgageAboutSection } from "@/components/mortgage/about-section"
 import { MortgageServicesSection } from "@/components/mortgage/services-section"
 import { MortgageCaseStudiesSection } from "@/components/mortgage/case-studies-section"
 import { MortgageQASection } from "@/components/mortgage/qa-section"
-import { MortgageContactFooter } from "@/components/mortgage/contact-footer"
 
 export default function MortgagePage() {
   return (
@@ -13,7 +12,6 @@ export default function MortgagePage() {
       <MortgageServicesSection />
       <MortgageCaseStudiesSection />
       <MortgageQASection />
-      <MortgageContactFooter />
     </main>
   )
 }
