@@ -54,17 +54,6 @@ export default function FAQPage() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4">
-                  <AccordionTrigger className="text-left font-medium">跟信用卡預借現金有什麼差別？</AccordionTrigger>
-                  <AccordionContent>
-                    <p>
-                      信用卡預借現金通常需要較長的處理時間，且手續費率較高（一般為3-5%）。此外，預借現金會立即產生利息，且會影響您的信用評分。
-                    </p>
-                    <p className="mt-2">
-                      而我們的服務提供更優惠的費率，並且可以立即拿到現金，無需等待處理時間。同時，因為是正常的刷卡消費，不會對您的信用評分產生負面影響。
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
 
                 <AccordionItem value="item-5">
                   <AccordionTrigger className="text-left font-medium">需要準備哪些文件？</AccordionTrigger>
@@ -78,18 +67,6 @@ export default function FAQPage() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6">
-                  <AccordionTrigger className="text-left font-medium">可以使用哪些銀行的信用卡？</AccordionTrigger>
-                  <AccordionContent>
-                    <p>我們接受各大銀行發行的信用卡，包括：</p>
-                    <ul className="list-disc pl-5 mt-2 space-y-1">
-                      <li>國內主要銀行（如國泰世華、台新、中信、玉山等）</li>
-                      <li>外商銀行（如花旗、匯豐等）</li>
-                      <li>各類聯名卡</li>
-                    </ul>
-                    <p className="mt-2">只要您的信用卡有足夠額度，基本上都可以使用我們的服務。</p>
-                  </AccordionContent>
-                </AccordionItem>
               </Accordion>
             </CardContent>
           </Card>

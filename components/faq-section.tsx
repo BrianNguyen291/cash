@@ -37,12 +37,6 @@ export function FAQSection() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="px-6 py-4 hover:no-underline">跟信用卡預借現金有什麼差別？</AccordionTrigger>
-              <AccordionContent className="px-6 pb-4">
-                信用卡預借現金通常需要較長的處理時間，且手續費率較高。而我們的服務提供更優惠的費率，並且可以立即拿到現金，無需等待處理時間。
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </div>
