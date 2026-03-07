@@ -6,7 +6,6 @@ import { Header } from "@/components/header"
 import { FloatingButtons } from "@/components/floating-buttons"
 import GoogleTag from "@/components/google-tag"
 import { FraudPreventionModal } from "@/components/fraud-prevention-modal"
-import { GlobalFooter } from "@/components/global-footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -47,7 +46,6 @@ export default function RootLayout({
         <GoogleTag />
         <Header />
         {children}
-        <GlobalFooter />
         <FloatingButtons />
         <FraudPreventionModal />
         <script
