@@ -25,7 +25,7 @@ export function Header() {
             <Button variant="default" size="sm" className="gap-2">
               <MessageCircle className="h-4 w-4" />
               <a href="https://lin.ee/LwBO514" target="_blank" rel="noopener noreferrer" className="hidden sm:inline">
-                LINE: @309rgssv 點擊加入
+                LINE: @505ladqb 點擊加入
               </a>
             </Button>
           </div>
@@ -61,7 +61,7 @@ export function Header() {
                     className="flex items-center gap-2"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    LINE: @309rgssv 點擊加入
+                    LINE: @505ladqb 點擊加入
                   </a>
                 </Button>
               </div>
