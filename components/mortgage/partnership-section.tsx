@@ -42,7 +42,7 @@ export function MortgagePartnershipSection() {
                   className="bg-white/10 hover:bg-white/20 text-white border-white/30 h-auto py-4"
                   asChild
                 >
-                  <Link href="mailto:ilove265615@yahoo.com.tw">
+                  <Link href="mailto:z0912253470@gmail.com">
                     <Mail className="mr-2 h-5 w-5" />
                     Email 聯繫
                   </Link>

@@ -22,10 +22,10 @@ export function MortgageContactFooter() {
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-accent" />
                   <Link
-                    href="mailto:ilove265615@yahoo.com.tw"
+                    href="mailto:z0912253470@gmail.com"
                     className="text-background/80 hover:text-accent transition-colors"
                   >
-                    ilove265615@yahoo.com.tw
+                    z0912253470@gmail.com
                   </Link>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export function MortgageContactFooter() {
                   className="bg-background/10 hover:bg-background/20 text-background border-background/30"
                   asChild
                 >
-                  <Link href="mailto:ilove265615@yahoo.com.tw">
+                  <Link href="mailto:z0912253470@gmail.com">
                     <Mail className="mr-2 h-5 w-5" />
                     Email
                   </Link>

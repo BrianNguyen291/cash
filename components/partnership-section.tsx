@@ -27,10 +27,10 @@ export function PartnershipSection() {
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <Mail className="h-5 w-5 text-white/80" />
                   <a 
-                    href="mailto:ilove265615@yahoo.com.tw" 
+                    href="mailto:z0912253470@gmail.com" 
                     className="text-white text-lg font-medium hover:text-amber-300 transition-colors"
                   >
-                    ilove265615@yahoo.com.tw
+                    z0912253470@gmail.com
                   </a>
                 </div>
               </div>

@@ -51,7 +51,7 @@ export async function POST(request: Request) {
 
     // Prepare email content based on form type
     const emailContent = {
-      to: "ilove265615@yahoo.com.tw",
+      to: "z0912253470@gmail.com",
       subject: isMortgageForm ? "新的房屋貸款諮詢請求" : "新的刷卡換現金諮詢請求",
       html: isMortgageForm ? `
         <h1>新的房屋貸款諮詢請求</h1>

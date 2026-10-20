@@ -4,7 +4,7 @@
 export const contactConfig = {
   phone: "0912253470", // TODO: Update with new phone number
   lineUrl: "https://lin.ee/CBrjtvjX", // TODO: Update with new LINE URL
-  email: "ilove265615@yahoo.com.tw",
+  email: "z0912253470@gmail.com",
   companyName: "耀躍科技有限公司"
 }
 
