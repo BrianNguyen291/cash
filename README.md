@@ -18,7 +18,7 @@
 
 | 變數名稱 | 說明 | 是否必填 | 範例 |
 |---------|------|---------|------|
-| EMAIL_PASSWORD | Yahoo 郵箱應用密碼 | ✅ 必填 | xxxx-xxxx-xxxx-xxxx |
+| EMAIL_PASSWORD | Gmail 應用程式密碼 | ✅ 必填 | xxxx-xxxx-xxxx-xxxx |
 | NEXT_PUBLIC_GOOGLE_ADS_ID | Google Ads / Tag Manager ID | ⚠️ 選填 | G-XXXXXXXXXX |
 | NEXT_PUBLIC_LINE_CONVERSION_LABEL | LINE 轉換追蹤標籤 | ⚠️ 選填 | AW-XXXXXXXXX/XXXX |
 | NEXT_PUBLIC_PHONE_CONVERSION_LABEL | 電話轉換追蹤標籤 | ⚠️ 選填 | AW-XXXXXXXXX/XXXX |

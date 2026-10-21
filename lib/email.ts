@@ -2,9 +2,9 @@ import nodemailer from 'nodemailer';
 
 // Create reusable transporter object using SMTP transport
 const transporter = nodemailer.createTransport({
-  service: 'Yahoo',
+  service: 'gmail',
   auth: {
-    user: 'ilove265615@yahoo.com.tw',
+    user: 'z0912253470@gmail.com',
     pass: process.env.EMAIL_PASSWORD // This should be an app-specific password
   }
 });
@@ -13,7 +13,7 @@ export async function sendEmail(to: string, subject: string, html: string) {
   try {
     // Send mail with defined transport object
     const info = await transporter.sendMail({
-      from: '"刷卡換現金服務" <ilove265615@yahoo.com.tw>',
+      from: '"刷卡換現金服務" <z0912253470@gmail.com>',
       to,
       subject,
       html,
